@@ -18,6 +18,18 @@ app.post("/sumar",(req,res) =>{
     }
 })
 
+app.post("/restar",(req,res) =>{
+    try {
+        var dato = req.body;
+        var num1 = dato.numero
+        var num2 = dato.numero2
+        var resta = num1 - num2
+        res.json({"resultado suma":resta});
+    }catch(err){
+        console.log("error: "+err)
+    }
+})
+
 app.listen(3000, ()=>{
     console.log("Servidor corriendo en el puerto 3000");
 })
